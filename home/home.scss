@@ -11,77 +11,232 @@ $list-height: 3rem;
 
 }
 
-// <<<<<<<<<<<<<<<<<-SIDE-BAR->>>>>>>>>>>>>>
-#sideBar {
-    text-decoration: none;
-    font-family: "Varela Round", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 1.1rem;
-    background-color: rgb(247, 246, 246);
-    min-height: 100vh;
-    border-right: 3px solid rgb(211, 211, 211);
-    overflow: hidden;
-    width: 4rem;
-    // width: 11rem;
+#main {
+    display: flex;
 
-    img {
-        display: flex;
-        justify-self: center;
-        width: 100%;
-        mix-blend-mode: darken;
+    // <<<<<<<<<<<<<<<<<-SIDE-BAR->>>>>>>>>>>>>>1
+    #sideBar {
+        text-decoration: none;
+        font-family: "Varela Round", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1.1rem;
+
+        background-color: rgb(247, 246, 246);
+        border-right: 3px solid rgb(211, 211, 211);
+        overflow: hidden;
+        position: sticky;
+        top: 1px;
+        width: 4rem;
+        height: 100vh;
+
+        img {
+            display: flex;
+            justify-self: center;
+            width: 100%;
+            mix-blend-mode: darken;
+        }
+
+        .sideBar-ul {
+            margin-top: 2rem;
+            overflow: hidden;
+
+            .sideBar-li {
+                display: flex;
+                align-items: center;
+                height: $list-height;
+                margin-top: 1rem;
+
+                a {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    align-items: center;
+                    color: rgb(6, 6, 6);
+                    height: 100%;
+                    text-decoration: none;
+                    // <<<<<<<<<<<<<<<<<- ICONS ->>>>>>>>>>>>>>
+
+                    i {
+                        border: 0.1ch solid rgb(0, 0, 0);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        width: 4rem;
+                        transition: all 0.3s;
+                    }
+
+                    // <<<<<<<<<<<<<<<<<- ICON-NAME ->>>>>>>>>>>>>>
+                    span {
+                        border: 0.1ch solid rgb(0, 0, 0);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        width: 7rem;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+
+            .logout {
+                position: absolute;
+                bottom: 0px;
+            }
+
+            .desh-li:hover {
+                color: black;
+                background: grey;
+            }
+        }
+
+        transition: all 0.4s ease;
     }
 
-    .sideBar-ul {
-        margin-top: 2rem;
-        overflow: hidden;
+    #sideBar:hover {
+        width: 13rem;
+    }
 
-        .sideBar-li {
+    // <<<<<<<<<<<<<<- MAIN-BODY ->>>>>>>>>>>>>>> 
+    #desh {
+        // background: rebeccapurple;
+
+        // <<<<<<<<<<<<<<- HEADER ->>>>>>>>>>>>>>> 
+        #header {
+            text-align: center;
+            // background: red;
+
+            // <<<<<<<<<<<<<<- COMPANY-LOGO-NAME ->>>>>>>>>>>>>>> 
+            #company-logo {
+                font-size: 2rem;
+            }
+        }
+
+
+        #about-corporation {
+            // margin-top: 1rem;
             display: flex;
-            align-items: center;
-            height: $list-height;
+            // flex: 1 1 500px;
+            flex-wrap: wrap;
+            justify-content: center;
+            // background-color: #744444;
 
-            a {
+            // <<<<<<<<<<<<<<<<<<-CONTAINERS->>>>>>>>>>>>>>>>
+            .container {
+                background-color: #ffffff;
+                top: 7rem;
+                padding: 1vw;
+                margin: 1vw;
                 display: grid;
                 grid-template-columns: auto auto;
+                justify-content: space-between;
                 align-items: center;
-                color: rgb(6, 6, 6);
-                height: 100%;
-                text-decoration: none;
-                // <<<<<<<<<<<<<<<<<- ICONS ->>>>>>>>>>>>>>
+                width: 21.5vw;
 
-                i {
-                    border: 0.1ch solid rgb(0, 0, 0);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                    width: 4rem;
-                    transition: all 0.3s;
+                .count {
+                    transition: all 0.2s ease;
+                    font-size: 2.5vw;
                 }
 
-                // <<<<<<<<<<<<<<<<<- ICON-NAME ->>>>>>>>>>>>>>
-                span {
-                    border: 0.1ch solid rgb(0, 0, 0);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                    width: 7rem;
-                    transition: all 0.3s;
+                .type {
+                    font-size: 1.2vw;
+                    font-weight: 600;
+                    color: gray;
+                    transition: all 0.1s ease;
+                }
+
+                .logo img {
+                    height: 8vw;
+                    transition: all 0.1s ease;
                 }
             }
         }
 
-        .desh-li:hover {
-            color: black;
-            background: grey;
+
+        // <<<<<<<<<<<<<<<<<<- EMPLOYEE-DETAINS ->>>>>>>>>>>>>>>>
+
+        #employee {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            // <!-- <<<<<<<<<<<<<<-ABOUT-EMPLOYEE->>>>>>>>>>>>>>> -->
+            .employee-detail {
+                background: rgb(245, 223, 223);
+                margin: 1rem;
+                padding: 2vw;
+
+                .header {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    justify-content: space-evenly;
+                    font-size: 2.3vw;
+                    height: 7vw;
+                    font-size: 1.5vw;
+                }
+
+                .field {
+
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                    border: 1px solid rgb(182, 182, 182);
+                    margin: 2px;
+
+                    li {
+                        // border: 1px solid black;
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: 0.6vw 0vw;
+                        font-size: 1.2rem;
+                        width: 10vw;
+                        justify-content: center;
+                    }
+
+                }
+            }
+
+        }
+    }
+
+    // <!-- <<<<<<<<<<<<<<- PENDING-INETVIEWS ->>>>>>>>>>>>>>> -->
+    .pending-interview {
+
+        background: rgb(245, 223, 223);
+        margin: 1rem;
+        padding: 2vw;
+
+        .header {
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-evenly;
+            font-size: 2.3vw;
+            height: 7vw;
+            font-size: 1.5vw;
+        }
+
+        .field {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            border: 1px solid rgb(182, 182, 182);
+            margin: 2px;
+
+            li {
+                // border: 1px solid black;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0.6vw 0vw;
+                font-size: 1.2rem;
+                width: 10vw;
+                justify-content: center;
+            }
+
         }
     }
 
     transition: all 0.4s ease;
-}
-
-#sideBar:hover {
-    width: 11rem;
 }

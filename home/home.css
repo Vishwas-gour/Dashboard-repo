@@ -6,35 +6,42 @@
   font-family: "Varela Round", sans-serif;
 }
 
-#sideBar {
+#main {
+  display: flex;
+  transition: all 0.4s ease;
+}
+#main #sideBar {
   text-decoration: none;
   font-family: "Varela Round", sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 1.1rem;
   background-color: rgb(247, 246, 246);
-  min-height: 100vh;
   border-right: 3px solid rgb(211, 211, 211);
   overflow: hidden;
+  position: sticky;
+  top: 1px;
   width: 4rem;
+  height: 100vh;
   transition: all 0.4s ease;
 }
-#sideBar img {
+#main #sideBar img {
   display: flex;
   justify-self: center;
   width: 100%;
   mix-blend-mode: darken;
 }
-#sideBar .sideBar-ul {
+#main #sideBar .sideBar-ul {
   margin-top: 2rem;
   overflow: hidden;
 }
-#sideBar .sideBar-ul .sideBar-li {
+#main #sideBar .sideBar-ul .sideBar-li {
   display: flex;
   align-items: center;
   height: 3rem;
+  margin-top: 1rem;
 }
-#sideBar .sideBar-ul .sideBar-li a {
+#main #sideBar .sideBar-ul .sideBar-li a {
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
@@ -42,7 +49,7 @@
   height: 100%;
   text-decoration: none;
 }
-#sideBar .sideBar-ul .sideBar-li a i {
+#main #sideBar .sideBar-ul .sideBar-li a i {
   border: 0.1ch solid rgb(0, 0, 0);
   display: flex;
   justify-content: center;
@@ -51,7 +58,7 @@
   width: 4rem;
   transition: all 0.3s;
 }
-#sideBar .sideBar-ul .sideBar-li a span {
+#main #sideBar .sideBar-ul .sideBar-li a span {
   border: 0.1ch solid rgb(0, 0, 0);
   display: flex;
   justify-content: center;
@@ -60,13 +67,115 @@
   width: 7rem;
   transition: all 0.3s;
 }
-#sideBar .sideBar-ul .desh-li:hover {
+#main #sideBar .sideBar-ul .logout {
+  position: absolute;
+  bottom: 0px;
+}
+#main #sideBar .sideBar-ul .desh-li:hover {
   color: black;
   background: grey;
 }
-
-#sideBar:hover {
-  width: 11rem;
+#main #sideBar:hover {
+  width: 13rem;
+}
+#main #desh #header {
+  text-align: center;
+}
+#main #desh #header #company-logo {
+  font-size: 2rem;
+}
+#main #desh #about-corporation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#main #desh #about-corporation .container {
+  background-color: #ffffff;
+  top: 7rem;
+  padding: 1vw;
+  margin: 1vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 21.5vw;
+}
+#main #desh #about-corporation .container .count {
+  transition: all 0.2s ease;
+  font-size: 2.5vw;
+}
+#main #desh #about-corporation .container .type {
+  font-size: 1.2vw;
+  font-weight: 600;
+  color: gray;
+  transition: all 0.1s ease;
+}
+#main #desh #about-corporation .container .logo img {
+  height: 8vw;
+  transition: all 0.1s ease;
+}
+#main #desh #employee {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#main #desh #employee .employee-detail {
+  background: rgb(245, 223, 223);
+  margin: 1rem;
+  padding: 2vw;
+}
+#main #desh #employee .employee-detail .header {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  font-size: 2.3vw;
+  height: 7vw;
+  font-size: 1.5vw;
+}
+#main #desh #employee .employee-detail .field {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border: 1px solid rgb(182, 182, 182);
+  margin: 2px;
+}
+#main #desh #employee .employee-detail .field li {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.6vw 0vw;
+  font-size: 1.2rem;
+  width: 10vw;
+  justify-content: center;
+}
+#main .pending-interview {
+  background: rgb(245, 223, 223);
+  margin: 1rem;
+  padding: 2vw;
+}
+#main .pending-interview .header {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  font-size: 2.3vw;
+  height: 7vw;
+  font-size: 1.5vw;
+}
+#main .pending-interview .field {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border: 1px solid rgb(182, 182, 182);
+  margin: 2px;
+}
+#main .pending-interview .field li {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.6vw 0vw;
+  font-size: 1.2rem;
+  width: 10vw;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=home.css.map */
