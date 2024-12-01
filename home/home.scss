@@ -8,7 +8,25 @@ $list-height: 3rem;
     padding: 0;
     box-sizing: border-box;
     font-family: "Varela Round", sans-serif;
+    transition: all 0.4s ease;
 
+}
+
+.more-btn {
+    padding: 0.3rem 0.8rem;
+    border-radius: 10%;
+    border: 1px solid rgb(0, 0, 0);
+    background: rgb(255, 142, 142);
+    cursor: pointer;
+}
+
+.header-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    background: rgb(255, 142, 142);
+    cursor: pointer;
 }
 
 #main {
@@ -25,12 +43,14 @@ $list-height: 3rem;
         background-color: rgb(247, 246, 246);
         border-right: 3px solid rgb(211, 211, 211);
         overflow: hidden;
-        position: sticky;
         top: 1px;
+        min-width: 4rem;
         width: 4rem;
+        ;
         height: 100vh;
 
         img {
+            margin-top: 1rem;
             display: flex;
             justify-self: center;
             width: 100%;
@@ -38,26 +58,26 @@ $list-height: 3rem;
         }
 
         .sideBar-ul {
-            margin-top: 2rem;
+            margin-top: 1rem;
             overflow: hidden;
 
             .sideBar-li {
                 display: flex;
                 align-items: center;
                 height: $list-height;
-                margin-top: 1rem;
+                margin-bottom: 1rem;
+                background-color: rgb(201, 164, 164);
 
                 a {
-                    display: grid;
-                    grid-template-columns: auto auto;
-                    align-items: center;
+                    display: flex;
+                    align-items: flex-start;
                     color: rgb(6, 6, 6);
                     height: 100%;
                     text-decoration: none;
                     // <<<<<<<<<<<<<<<<<- ICONS ->>>>>>>>>>>>>>
 
                     i {
-                        border: 0.1ch solid rgb(0, 0, 0);
+                        // border: 0.1ch solid rgb(0, 0, 0);
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -68,20 +88,15 @@ $list-height: 3rem;
 
                     // <<<<<<<<<<<<<<<<<- ICON-NAME ->>>>>>>>>>>>>>
                     span {
-                        border: 0.1ch solid rgb(0, 0, 0);
+                        // border: 0.1ch solid rgb(0, 0, 0);
                         display: flex;
-                        justify-content: center;
+                        justify-content: flex-start;
                         align-items: center;
                         height: 100%;
-                        width: 7rem;
+                        width: 4rem;
                         transition: all 0.3s;
                     }
                 }
-            }
-
-            .logout {
-                position: absolute;
-                bottom: 0px;
             }
 
             .desh-li:hover {
@@ -94,71 +109,100 @@ $list-height: 3rem;
     }
 
     #sideBar:hover {
-        width: 13rem;
+        min-width: 12rem;
     }
 
     // <<<<<<<<<<<<<<- MAIN-BODY ->>>>>>>>>>>>>>> 
     #desh {
-        // background: rebeccapurple;
+        max-height: 100vh;
+        overflow-y: scroll;
+        background: rgb(212, 169, 255);
+        width: 100vw;
 
         // <<<<<<<<<<<<<<- HEADER ->>>>>>>>>>>>>>> 
         #header {
             text-align: center;
             // background: red;
+            background-color: rgb(117, 117, 117);
 
             // <<<<<<<<<<<<<<- COMPANY-LOGO-NAME ->>>>>>>>>>>>>>> 
             #company-logo {
-                font-size: 2rem;
+                font-size: 3rem;
+                padding: 1rem;
             }
         }
 
 
         #about-corporation {
-            // margin-top: 1rem;
-            display: flex;
-            // flex: 1 1 500px;
-            flex-wrap: wrap;
+            // background-color: red;
+            margin-top: 1rem;
+            display: grid;
             justify-content: center;
-            // background-color: #744444;
+            grid-template-columns: auto auto auto auto;
 
             // <<<<<<<<<<<<<<<<<<-CONTAINERS->>>>>>>>>>>>>>>>
             .container {
                 background-color: #ffffff;
                 top: 7rem;
-                padding: 1vw;
-                margin: 1vw;
+                padding: 1rem;
+                margin: 1rem;
                 display: grid;
                 grid-template-columns: auto auto;
                 justify-content: space-between;
+                grid-auto-flow: column;
                 align-items: center;
-                width: 21.5vw;
+                width: 17rem;
 
                 .count {
                     transition: all 0.2s ease;
-                    font-size: 2.5vw;
+                    font-size: 2.5rem;
                 }
 
                 .type {
-                    font-size: 1.2vw;
+                    font-size: 1.2rem;
                     font-weight: 600;
                     color: gray;
                     transition: all 0.1s ease;
                 }
 
                 .logo img {
-                    height: 8vw;
+                    height: 7rem;
                     transition: all 0.1s ease;
                 }
             }
         }
 
+        @media (max-width:1285px) {
+            #about-corporation {
+
+                grid-template-columns: auto auto;
+
+                // <<<<<<<<<<<<<<<<<<-CONTAINERS->>>>>>>>>>>>>>>>
+                .container {
+                    width: 30vw;
+                    min-width: 20rem;
+
+                    .count {
+                        // font-size: 2.5rem;
+                    }
+
+                    .type {
+                        // font-size: 1.2rem;
+                    }
+
+                    .logo img {
+                        // height: 7rem;
+                    }
+                }
+            }
+        }
 
         // <<<<<<<<<<<<<<<<<<- EMPLOYEE-DETAINS ->>>>>>>>>>>>>>>>
 
         #employee {
 
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: auto auto;
             justify-content: space-evenly;
 
             // <!-- <<<<<<<<<<<<<<-ABOUT-EMPLOYEE->>>>>>>>>>>>>>> -->
@@ -168,12 +212,11 @@ $list-height: 3rem;
                 padding: 2vw;
 
                 .header {
-                    display: grid;
-                    grid-template-columns: auto auto;
-                    justify-content: space-evenly;
-                    font-size: 2.3vw;
-                    height: 7vw;
-                    font-size: 1.5vw;
+                    h1{
+                        width: 100%;
+                        font-size: 2rem;
+                        text-align: center;
+                    }
                 }
 
                 .field {
@@ -181,7 +224,6 @@ $list-height: 3rem;
                     list-style: none;
                     display: flex;
                     align-items: center;
-                    text-align: left;
                     border: 1px solid rgb(182, 182, 182);
                     margin: 2px;
 
@@ -189,15 +231,79 @@ $list-height: 3rem;
                         // border: 1px solid black;
                         display: flex;
                         flex-wrap: wrap;
-                        padding: 0.6vw 0vw;
+                        padding: 0.5rem;
                         font-size: 1.2rem;
-                        width: 10vw;
                         justify-content: center;
+                        // overflow-x: hidden;
+                    }
+
+                    .id {
+                        width: 4rem;
+                    }
+
+                    .name {
+                        width: 8rem;
+                    }
+
+                    .department {
+                        width: 10rem;
+                    }
+
+                    .salary {
+                        width: 8rem;
+                    }
+                    .more{
+                        width: 10rem;
                     }
 
                 }
             }
 
+        }
+
+        @media (max-width:1285px) {
+            #employee {
+                grid-template-columns: auto;
+
+
+                // <!-- <<<<<<<<<<<<<<-ABOUT-EMPLOYEE->>>>>>>>>>>>>>> -->
+                .employee-detail {
+                    margin: 1rem;
+                    padding: 2vw;
+
+                    .header {
+                        h1{
+                            width: 100%;
+                        }
+                        font-size: 2.3vw;
+                        height: 7vw;
+                        font-size: 1.5vw;
+                        text-align: center;
+                    }
+
+                    .field {
+
+                        list-style: none;
+                        display: flex;
+                        align-items: center;
+                        text-align: left;
+                        border: 1px solid rgb(182, 182, 182);
+                        margin: 2px;
+
+                        li {
+                            // border: 1px solid black;
+                            display: flex;
+                            flex-wrap: wrap;
+                            padding: 0.6vw 0vw;
+                            font-size: 1.2rem;
+
+                            justify-content: center;
+                        }
+
+
+                    }
+                }
+            }
         }
     }
 

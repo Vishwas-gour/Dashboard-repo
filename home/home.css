@@ -4,6 +4,24 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Varela Round", sans-serif;
+  transition: all 0.4s ease;
+}
+
+.more-btn {
+  padding: 0.3rem 0.8rem;
+  border-radius: 10%;
+  border: 1px solid rgb(0, 0, 0);
+  background: rgb(255, 142, 142);
+  cursor: pointer;
+}
+
+.header-btn {
+  font-size: 1.5rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+  background: rgb(255, 142, 142);
+  cursor: pointer;
 }
 
 #main {
@@ -19,38 +37,38 @@
   background-color: rgb(247, 246, 246);
   border-right: 3px solid rgb(211, 211, 211);
   overflow: hidden;
-  position: sticky;
   top: 1px;
+  min-width: 4rem;
   width: 4rem;
   height: 100vh;
   transition: all 0.4s ease;
 }
 #main #sideBar img {
+  margin-top: 1rem;
   display: flex;
   justify-self: center;
   width: 100%;
   mix-blend-mode: darken;
 }
 #main #sideBar .sideBar-ul {
-  margin-top: 2rem;
+  margin-top: 1rem;
   overflow: hidden;
 }
 #main #sideBar .sideBar-ul .sideBar-li {
   display: flex;
   align-items: center;
   height: 3rem;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(201, 164, 164);
 }
 #main #sideBar .sideBar-ul .sideBar-li a {
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
   color: rgb(6, 6, 6);
   height: 100%;
   text-decoration: none;
 }
 #main #sideBar .sideBar-ul .sideBar-li a i {
-  border: 0.1ch solid rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,64 +77,78 @@
   transition: all 0.3s;
 }
 #main #sideBar .sideBar-ul .sideBar-li a span {
-  border: 0.1ch solid rgb(0, 0, 0);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
-  width: 7rem;
+  width: 4rem;
   transition: all 0.3s;
-}
-#main #sideBar .sideBar-ul .logout {
-  position: absolute;
-  bottom: 0px;
 }
 #main #sideBar .sideBar-ul .desh-li:hover {
   color: black;
   background: grey;
 }
 #main #sideBar:hover {
-  width: 13rem;
+  min-width: 12rem;
+}
+#main #desh {
+  max-height: 100vh;
+  overflow-y: scroll;
+  background: rgb(212, 169, 255);
+  width: 100vw;
 }
 #main #desh #header {
   text-align: center;
+  background-color: rgb(117, 117, 117);
 }
 #main #desh #header #company-logo {
-  font-size: 2rem;
+  font-size: 3rem;
+  padding: 1rem;
 }
 #main #desh #about-corporation {
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: 1rem;
+  display: grid;
   justify-content: center;
+  grid-template-columns: auto auto auto auto;
 }
 #main #desh #about-corporation .container {
   background-color: #ffffff;
   top: 7rem;
-  padding: 1vw;
-  margin: 1vw;
+  padding: 1rem;
+  margin: 1rem;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
+  grid-auto-flow: column;
   align-items: center;
-  width: 21.5vw;
+  width: 17rem;
 }
 #main #desh #about-corporation .container .count {
   transition: all 0.2s ease;
-  font-size: 2.5vw;
+  font-size: 2.5rem;
 }
 #main #desh #about-corporation .container .type {
-  font-size: 1.2vw;
+  font-size: 1.2rem;
   font-weight: 600;
   color: gray;
   transition: all 0.1s ease;
 }
 #main #desh #about-corporation .container .logo img {
-  height: 8vw;
+  height: 7rem;
   transition: all 0.1s ease;
 }
+@media (max-width: 1285px) {
+  #main #desh #about-corporation {
+    grid-template-columns: auto auto;
+  }
+  #main #desh #about-corporation .container {
+    width: 30vw;
+    min-width: 20rem;
+  }
+}
 #main #desh #employee {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: space-evenly;
 }
 #main #desh #employee .employee-detail {
@@ -124,29 +156,72 @@
   margin: 1rem;
   padding: 2vw;
 }
-#main #desh #employee .employee-detail .header {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-evenly;
-  font-size: 2.3vw;
-  height: 7vw;
-  font-size: 1.5vw;
+#main #desh #employee .employee-detail .header h1 {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
 }
 #main #desh #employee .employee-detail .field {
   list-style: none;
   display: flex;
   align-items: center;
-  text-align: left;
   border: 1px solid rgb(182, 182, 182);
   margin: 2px;
 }
 #main #desh #employee .employee-detail .field li {
   display: flex;
   flex-wrap: wrap;
-  padding: 0.6vw 0vw;
+  padding: 0.5rem;
   font-size: 1.2rem;
-  width: 10vw;
   justify-content: center;
+}
+#main #desh #employee .employee-detail .field .id {
+  width: 4rem;
+}
+#main #desh #employee .employee-detail .field .name {
+  width: 8rem;
+}
+#main #desh #employee .employee-detail .field .department {
+  width: 10rem;
+}
+#main #desh #employee .employee-detail .field .salary {
+  width: 8rem;
+}
+#main #desh #employee .employee-detail .field .more {
+  width: 10rem;
+}
+@media (max-width: 1285px) {
+  #main #desh #employee {
+    grid-template-columns: auto;
+  }
+  #main #desh #employee .employee-detail {
+    margin: 1rem;
+    padding: 2vw;
+  }
+  #main #desh #employee .employee-detail .header {
+    font-size: 2.3vw;
+    height: 7vw;
+    font-size: 1.5vw;
+    text-align: center;
+  }
+  #main #desh #employee .employee-detail .header h1 {
+    width: 100%;
+  }
+  #main #desh #employee .employee-detail .field {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    border: 1px solid rgb(182, 182, 182);
+    margin: 2px;
+  }
+  #main #desh #employee .employee-detail .field li {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.6vw 0vw;
+    font-size: 1.2rem;
+    justify-content: center;
+  }
 }
 #main .pending-interview {
   background: rgb(245, 223, 223);
